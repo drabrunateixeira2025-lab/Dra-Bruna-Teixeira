@@ -1,0 +1,147 @@
+/* ==============================
+   CONFIGURAÇÕES GERAIS
+================================ */
+:root {
+  --primary: #0a4d4a;
+  --secondary: #d4a373;
+  --bg-page: #fdf8f4;
+  --white: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-page);
+  color: var(--primary);
+  line-height: 1.6;
+}
+
+/* ==============================
+   HEADER (Padrão Dra Bruna)
+================================ */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: var(--primary);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0,0,0,.1);
+}
+
+.logo img { height: 90px; object-fit: contain; }
+
+nav ul { display: flex; gap: 30px; list-style: none; }
+
+nav a {
+  color: #f1f1f1;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: .3s;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover, nav a.active {
+  color: var(--secondary);
+  border-bottom: 2px solid var(--secondary);
+}
+
+/* ==============================
+   HERO DÚVIDAS (Ajustado)
+================================ */
+.faq-hero {
+  padding: 100px 5%;
+  background: linear-gradient(135deg, #0a4d4a 0%, #1a6d69 100%);
+  color: white;
+  text-align: center;
+}
+
+.faq-hero h1 { font-size: 42px; color: var(--secondary); margin-bottom: 10px; }
+
+.separator {
+  width: 60px;
+  border: 2px solid var(--secondary);
+  margin: 0 auto 20px;
+}
+
+.faq-hero p { font-size: 18px; opacity: 0.9; }
+
+/* ==============================
+   GRID DE PERGUNTAS (FAQ)
+================================ */
+.faq { padding: 80px 8%; }
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.faq-card {
+  background: var(--white);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: .3s;
+  border-left: 5px solid var(--secondary); /* Detalhe lateral */
+}
+
+.faq-card h3 {
+  color: var(--primary);
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.faq-card p {
+  color: #555;
+  font-size: 15px;
+}
+
+.faq-card:hover { transform: translateY(-5px); }
+
+/* ==============================
+   CTA & FOOTER
+================================ */
+.cta-final {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.btn-hero {
+  display: inline-block;
+  padding: 15px 40px;
+  margin-top: 25px;
+  background: var(--secondary);
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: .3s;
+}
+
+.main-footer {
+  background: var(--primary);
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 30px 15px;
+  font-size: 14px;
+}
+
+/* ==============================
+   RESPONSIVO
+================================ */
+@media (max-width: 768px) {
+  header { flex-direction: column; gap: 15px; }
+  .faq-hero h1 { font-size: 32px; }
+  .faq-grid { grid-template-columns: 1fr; }
+}

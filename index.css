@@ -1,0 +1,286 @@
+/* ==============================
+   CONFIGURAÇÕES GERAIS
+================================ */
+:root {
+  --primary: #0a4d4a;
+  --secondary: #d4a373;
+  --bg-page: #fdf8f4;
+  --white: #ffffff;
+  --text-dark: #355;
+  --text-light: #f1f1f1;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-page);
+  color: var(--primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ==============================
+   HEADER
+================================ */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: var(--primary);
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 90px;
+  object-fit: contain;
+}
+
+nav ul {
+  display: flex;
+  gap: 35px;
+  list-style: none;
+}
+
+nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+  transition: .3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--secondary);
+  border-bottom: 2px solid var(--secondary);
+}
+
+/* ==============================
+   HERO
+================================ */
+.hero {
+  padding: 120px 5% 180px;
+  background: linear-gradient(135deg, #0a4d4a 0%, #1a6d69 100%);
+  color: white;
+  text-align: center;
+  clip-path: ellipse(140% 100% at 50% 0%);
+}
+
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 48px;
+  color: var(--secondary);
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 20px;
+  margin-bottom: 35px;
+  opacity: .9;
+}
+
+.btn-hero {
+  display: inline-block;
+  padding: 15px 40px;
+  background: var(--secondary);
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid transparent;
+  transition: .3s;
+}
+
+.btn-hero:hover {
+  background: transparent;
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+
+/* ==============================
+   SOBRE A DRA
+================================ */
+.about-dr {
+  padding: 100px 10%;
+  margin-top: -60px;
+}
+
+.profile-content {
+  display: flex;
+  gap: 60px;
+  align-items: center;
+  background: var(--white);
+  padding: 50px;
+  border-radius: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  box-shadow: 0 15px 35px rgba(0,0,0,.06);
+}
+
+.profile-img {
+  width: 340px;
+  height: 440px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 8px solid var(--bg-page);
+}
+
+.profile-info h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.separator {
+  width: 60px;
+  border: 2px solid var(--secondary);
+  margin-bottom: 20px;
+}
+
+.profile-info p {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.btn-contato {
+  padding: 12px 30px;
+  background: var(--primary);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: .3s;
+}
+
+.btn-contato:hover {
+  background: var(--secondary);
+}
+
+/* ==============================
+   DIFERENCIAIS
+================================ */
+.highlights {
+  padding: 80px 10%;
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.highlight-card {
+  background: var(--white);
+  padding: 35px;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,.05);
+  text-align: center;
+  transition: .3s;
+}
+
+.highlight-card h3 {
+  color: var(--secondary);
+  margin-bottom: 15px;
+  font-size: 20px;
+}
+
+.highlight-card p {
+  color: #555;
+  font-size: 15px;
+}
+
+.highlight-card:hover {
+  transform: translateY(-8px);
+}
+
+/* ==============================
+   CTA FINAL
+================================ */
+.cta-final {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.cta-final h2 {
+  font-size: 36px;
+  color: var(--secondary);
+  margin-bottom: 15px;
+}
+
+.cta-final p {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+/* ==============================
+   FOOTER
+================================ */
+.main-footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 30px 15px;
+  font-size: 14px;
+}
+
+/* ==============================
+   RESPONSIVO
+================================ */
+@media (max-width: 900px) {
+  .profile-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .separator {
+    margin: 0 auto 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav ul {
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+}
