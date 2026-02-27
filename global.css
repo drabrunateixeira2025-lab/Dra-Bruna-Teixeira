@@ -1,0 +1,123 @@
+/* ==============================
+   VARIÁVEIS E RESET
+================================ */
+:root {
+  --primary: #0a4d4a;
+  --secondary: #d4a373;
+  --bg-page: #fdf8f4;
+  --white: #ffffff;
+  --text-dark: #333;
+  --text-light: #f1f1f1;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-page);
+  color: var(--primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ==============================
+   HEADER PADRONIZADO
+================================ */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: var(--primary);
+  box-shadow: 0 4px 12px rgba(0,0,0,.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo img { height: 90px; object-fit: contain; }
+
+nav ul { display: flex; gap: 35px; list-style: none; }
+
+nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid transparent;
+  transition: .3s;
+}
+
+nav a:hover, nav a.active {
+  color: var(--secondary);
+  border-bottom: 2px solid var(--secondary);
+}
+
+/* ==============================
+   COMPONENTES GERAIS (Botões e CTA)
+================================ */
+.btn-hero {
+  display: inline-block;
+  padding: 15px 40px;
+  background: var(--secondary);
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid transparent;
+  transition: .3s;
+}
+
+.btn-hero:hover {
+  background: transparent;
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+
+.cta-final {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.cta-final h2 { font-size: 36px; color: var(--secondary); margin-bottom: 15px; }
+.cta-final p { font-size: 18px; margin-bottom: 30px; }
+
+.main-footer {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 30px 15px;
+  font-size: 14px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* WHATSAPP FIXO */
+.btn-whatsapp {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25d366;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+.btn-whatsapp img { width: 35px; }
+
+/* ==============================
+   RESPONSIVIDADE GLOBAL
+================================ */
+@media (max-width: 768px) {
+  header { flex-direction: column; gap: 15px; padding: 15px; }
+  nav ul { gap: 15px; flex-wrap: wrap; justify-content: center; }
+  .cta-final h2 { font-size: 28px; }
+}

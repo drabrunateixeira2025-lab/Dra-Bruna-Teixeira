@@ -1,76 +1,10 @@
-/* ==============================
-   CONFIGURAÇÕES GERAIS
-================================ */
-:root {
-  --primary: #0a4d4a;
-  --secondary: #d4a373;
-  --bg-page: #fdf8f4;
-  --white: #ffffff;
-  --text-dark: #355;
-  --text-light: #f1f1f1;
-}
+/* ==========================================================================
+   INDEX.CSS - Estilos Exclusivos da Página Home
+   ========================================================================== */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: var(--bg-page);
-  color: var(--primary);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-/* ==============================
-   HEADER
-================================ */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 8%;
-  background: var(--primary);
-  box-shadow: 0 4px 12px rgba(0,0,0,.15);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.logo img {
-  height: 90px;
-  object-fit: contain;
-}
-
-nav ul {
-  display: flex;
-  gap: 35px;
-  list-style: none;
-}
-
-nav a {
-  color: var(--text-light);
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding-bottom: 5px;
-  border-bottom: 2px solid transparent;
-  transition: .3s;
-}
-
-nav a:hover,
-nav a.active {
-  color: var(--secondary);
-  border-bottom: 2px solid var(--secondary);
-}
-
-/* ==============================
-   HERO
-================================ */
+/* 1. HERO SECTION 
+   Estilo do banner principal com efeito de onda
+   -------------------------------------------------------------------------- */
 .hero {
   padding: 120px 5% 180px;
   background: linear-gradient(135deg, #0a4d4a 0%, #1a6d69 100%);
@@ -85,45 +19,29 @@ nav a.active {
 }
 
 .hero h1 {
-  font-size: 48px;
+  font-size: clamp(32px, 5vw, 48px);
   color: var(--secondary);
   margin-bottom: 20px;
+  font-weight: 600;
 }
 
 .hero p {
-  font-size: 20px;
+  font-size: clamp(16px, 2vw, 20px);
   margin-bottom: 35px;
   opacity: .9;
 }
 
-.btn-hero {
-  display: inline-block;
-  padding: 15px 40px;
-  background: var(--secondary);
-  color: white;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  border: 2px solid transparent;
-  transition: .3s;
-}
-
-.btn-hero:hover {
-  background: transparent;
-  border-color: var(--secondary);
-  color: var(--secondary);
-}
-
-/* ==============================
-   SOBRE A DRA
-================================ */
+/* 2. SOBRE A DRA 
+   Card flutuante com foto e descrição
+   -------------------------------------------------------------------------- */
 .about-dr {
-  padding: 100px 10%;
-  margin-top: -60px;
+  padding: 80px 5%;
+  margin-top: -60px; /* Faz o card sobrepor levemente o hero */
 }
 
 .profile-content {
   display: flex;
+  flex-direction: row;
   gap: 60px;
   align-items: center;
   background: var(--white);
@@ -135,21 +53,30 @@ nav a.active {
 }
 
 .profile-img {
-  width: 340px;
-  height: 440px;
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  min-height: 400px;
   object-fit: cover;
   border-radius: 15px;
   border: 8px solid var(--bg-page);
+  flex-shrink: 0;
+}
+
+.profile-info {
+  flex: 1;
 }
 
 .profile-info h2 {
-  font-size: 36px;
+  font-size: clamp(26px, 4vw, 36px);
   margin-bottom: 10px;
+  color: var(--primary);
 }
 
 .separator {
   width: 60px;
-  border: 2px solid var(--secondary);
+  border: none;
+  border-top: 3px solid var(--secondary);
   margin-bottom: 20px;
 }
 
@@ -160,29 +87,31 @@ nav a.active {
 }
 
 .btn-contato {
+  display: inline-block;
   padding: 12px 30px;
   background: var(--primary);
   color: white;
   text-decoration: none;
   border-radius: 6px;
   font-weight: 500;
-  transition: .3s;
+  transition: var(--transition);
 }
 
 .btn-contato:hover {
   background: var(--secondary);
+  transform: translateY(-2px);
 }
 
-/* ==============================
-   DIFERENCIAIS
-================================ */
+/* 3. DIFERENCIAIS (HIGHLIGHTS)
+   Grid com os 3 pilares de atendimento
+   -------------------------------------------------------------------------- */
 .highlights {
-  padding: 80px 10%;
+  padding: 80px 5%;
 }
 
 .highlights-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
   max-width: 1100px;
   margin: 0 auto;
@@ -190,11 +119,12 @@ nav a.active {
 
 .highlight-card {
   background: var(--white);
-  padding: 35px;
+  padding: 40px;
   border-radius: 18px;
-  box-shadow: 0 10px 25px rgba(0,0,0,.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,.04);
   text-align: center;
-  transition: .3s;
+  transition: var(--transition);
+  border-bottom: 4px solid transparent;
 }
 
 .highlight-card h3 {
@@ -204,83 +134,66 @@ nav a.active {
 }
 
 .highlight-card p {
-  color: #555;
+  color: #666;
   font-size: 15px;
 }
 
 .highlight-card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-10px);
+  border-bottom: 4px solid var(--secondary);
 }
 
-/* ==============================
-   CTA FINAL
-================================ */
-.cta-final {
-  background: var(--primary);
-  color: white;
-  text-align: center;
-  padding: 80px 20px;
-}
+/* ==========================================================================
+   RESPONSIVIDADE INDEX
+   ========================================================================== */
 
-.cta-final h2 {
-  font-size: 36px;
-  color: var(--secondary);
-  margin-bottom: 15px;
-}
-
-.cta-final p {
-  font-size: 18px;
-  margin-bottom: 30px;
-}
-
-/* ==============================
-   FOOTER
-================================ */
-.main-footer {
-  background: var(--primary);
-  color: white;
-  text-align: center;
-  padding: 30px 15px;
-  font-size: 14px;
-}
-
-/* ==============================
-   RESPONSIVO
-================================ */
-@media (max-width: 900px) {
+/* Tablets e iPads */
+@media (max-width: 968px) {
   .profile-content {
-    flex-direction: column;
+    gap: 30px;
+    padding: 40px;
+  }
+  
+  .profile-img {
+    max-width: 300px;
+    min-height: auto;
+  }
+}
+
+/* Celulares (Mobile) */
+@media (max-width: 850px) {
+  .about-dr {
+    padding-top: 100px;
+  }
+
+  .profile-content {
+    flex-direction: column; /* Empilha foto e texto */
     text-align: center;
+    padding: 30px 20px;
   }
 
   .profile-img {
-    width: 100%;
-    max-width: 300px;
-    height: auto;
+    max-width: 260px;
+    min-height: auto;
+    margin-bottom: 10px;
   }
 
   .separator {
-    margin: 0 auto 20px;
+    margin: 0 auto 20px; /* Centraliza a linha no mobile */
+  }
+
+  .hero {
+    padding: 100px 5% 150px;
   }
 }
 
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  nav ul {
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .hero h1 {
-    font-size: 32px;
-  }
-
-  .hero p {
+/* Celulares Pequenos */
+@media (max-width: 480px) {
+  .profile-info p {
     font-size: 16px;
+  }
+  
+  .highlight-card {
+    padding: 30px 20px;
   }
 }

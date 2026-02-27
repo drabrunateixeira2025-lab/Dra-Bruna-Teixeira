@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="global.css">
   <link rel="stylesheet" href="consultorios.css">
 </head>
-
 <body>
 
   <header>
@@ -30,36 +29,42 @@
     </nav>
   </header>
 
-  <section class="consultorio-intro">
-    <h1>Nosso Espaço</h1>
-    <hr class="separator">
-    <p>Nosso endereço é na Avenida Brasília, 6616, Novo Mundo</p>
-  </section>
+  <main>
+    <section class="consultorio-intro">
+      <h1>Nosso Espaço</h1>
+      <hr class="separator">
+      <p>Um ambiente preparado para oferecer conforto, segurança e a melhor experiência em estética avançada.</p>
+      <p><strong>Endereço:</strong> Avenida Brasília, 6616, Novo Mundo</p>
+    </section>
 
-  <section class="carousel-section">
-    <div class="carousel-container">
-      <div class="carousel-track" id="carouselTrack">
+    <section class="carousel-section">
+      <div class="carousel-container">
+        <div class="carousel-track" id="carouselTrack">
+          <div class="carousel-item"><img src="assets/sala1.jpeg" alt="Sala de Atendimento"></div>
+          <div class="carousel-item"><img src="assets/sala2.jpeg" alt="Recepção"></div>
+          <div class="carousel-item"><img src="assets/sala3.jpeg" alt="Equipamentos"></div>
+        </div>
+        <button class="carousel-btn prev" id="prevBtn">&#10094;</button>
+        <button class="carousel-btn next" id="nextBtn">&#10095;</button>
       </div>
-      <button class="carousel-btn prev" id="prevBtn">&#10094;</button>
-      <button class="carousel-btn next" id="nextBtn">&#10095;</button>
-    </div>
-    <div class="carousel-dots" id="carouselDots"></div>
-  </section>
+      <div class="carousel-dots" id="carouselDots"></div>
+    </section>
+  </main>
 
   <section class="cta-final">
     <h2>Agende sua Avaliação</h2>
-    <p>Descubra o tratamento ideal para você</p>
-    <a href="https://wa.me/5541999071568?text=Olá%20Dra%20Bruna!%20Vi%20o%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20avaliação."
-      class="btn-hero" target="_blank">
-      Fale Conosco
-    </a>
+    <p>Venha conhecer nosso consultório e transformar sua autoestima.</p>
+    <a href="https://wa.me/5541999071568" class="btn-hero" target="_blank">Fale Conosco</a>
   </section>
 
   <footer class="main-footer">
     © 2025 Dra Bruna Teixeira — Estética e Autocuidado
   </footer>
 
+  <a href="https://wa.me/5541999071568" class="btn-whatsapp" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+
   <script src="carousel-consultorio.js"></script>
 </body>
-
 </html>
