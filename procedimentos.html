@@ -1,40 +1,60 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Procedimentos | Dra Bruna Teixeira</title>
-
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="procedimentos.css">
   <link rel="stylesheet" href="global.css">
+  <link rel="stylesheet" href="procedimentos.css">
 </head>
-
 <body>
 
-  <header>
-    <div class="logo">
-      <img src="assets/logobruna.png" alt="Logo Dra Bruna Teixeira">
-    </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="procedimentos.html" class="active">Procedimentos</a></li>
-        <li><a href="duvidas.html">Dúvidas</a></li>
-        <li><a href="consultorios.html">Consultório</a></li>
-        <li><a href="depoimentos.html">Depoimentos</a></li>
-      </ul>
-    </nav>
-  </header>
+<header>
+  <div class="logo">
+    <img src="assets/logobruna.png" alt="Logo Dra Bruna Teixeira">
+  </div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="procedimentos.html" class="active">Procedimentos</a></li>
+      <li><a href="duvidas.html">Dúvidas</a></li>
+      <li><a href="consultorios.html">Consultório</a></li>
+      <li><a href="depoimentos.html">Depoimentos</a></li>
+    </ul>
+  </nav>
+</header>
 
+<main>
   <section class="procedimentos-intro">
     <h1>Nossos Procedimentos</h1>
     <hr class="separator">
-    <p>Conheça nossa gama de tratamentos especializados para realçar sua beleza.</p>
+    <p>Conheça nossa gama de tratamentos especializados.</p>
+  </section>
+
+  <section class="cards-carousel-section">
+    <div class="cards-carousel-container">
+      <div class="cards-carousel-track" id="cardsTrack">
+        <div class="card-glass">Harmonização Facial</div>
+        <div class="card-glass">Preenchimento Labial</div>
+        <div class="card-glass">Protocolos para Olheiras</div>
+        <div class="card-glass">Botox</div>
+        <div class="card-glass">Bioestimulador de colágeno</div>
+        <div class="card-glass">Limpeza de pele</div>
+        <div class="card-glass">Ultrassom Microfocado (Ultraformer)</div>
+        <div class="card-glass">Rinomodelação</div>
+        <div class="card-glass">Tratamentos para pele</div>
+        <div class="card-glass">Protocolos Corporais</div>
+        <div class="card-glass">Remoção de varicoses</div>
+        <div class="card-glass">Harmonização de Glúteos</div>
+      </div>
+    </div>
+    <div class="cards-controls">
+      <button class="card-btn" id="cardPrev">&#10094;</button>
+      <button class="card-btn" id="cardNext">&#10095;</button>
+    </div>
   </section>
 
   <section class="carousel-section">
@@ -46,20 +66,19 @@
     </div>
     <div class="carousel-dots" id="carouselDots"></div>
   </section>
+</main>
 
-  <section class="cta-final">
-    <h2>Agende sua Avaliação</h2>
-    <p>Descubra o tratamento ideal para você</p>
-    <a href="https://wa.me/5541999071568?text=Olá%20Dra%20Bruna!%20Vi%20o%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20avaliação."
-      class="btn-hero" target="_blank">
-      Fale Conosco
-    </a>
-  </section>
-  <footer class="main-footer">
-    © 2025 Dra Bruna Teixeira — Estética e Autocuidado
-  </footer>
+<section class="cta-final">
+  <h2>Agende sua Avaliação</h2>
+  <p>Descubra o tratamento ideal para você</p>
+  <a href="https://wa.me/5541999071568" class="btn-hero" target="_blank">Fale Conosco</a>
+</section>
 
-  <script src="carousel-procedimentos.js"></script>
+<footer class="main-footer">
+  © 2025 Dra Bruna Teixeira — Estética e Autocuidado
+</footer>
+
+<script src="carousel-procedimentos.js"></script>
+<script src="carousel-cards.js"></script>
 </body>
-
 </html>
