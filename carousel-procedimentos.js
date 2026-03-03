@@ -1,43 +1,52 @@
-const track = document.getElementById('carouselTrack');
-const dotsContainer = document.getElementById('carouselDots');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
+// Usamos nomes específicos para fotos para não conflitar com os cards
+const photoTrack = document.getElementById('carouselTrack');
+const photoDotsContainer = document.getElementById('carouselDots');
+const photoPrevBtn = document.getElementById('prevBtn');
+const photoNextBtn = document.getElementById('nextBtn');
 
-const totalImages = 11;
-let currentIndex = 0;
+const photoTotalImages = 11;
+let photoCurrentIndex = 0;
 
-// Criação dinâmica dos elementos
-for (let i = 1; i <= totalImages; i++) {
-    const slide = document.createElement('div');
-    slide.className = 'carousel-item';
-    slide.innerHTML = `<img src="assets/procedimento${i}.jpeg" alt="Procedimento ${i}">`;
-    track.appendChild(slide);
+// Inicialização segura
+if (photoTrack && photoDotsContainer) {
+    // Limpa o conteúdo antes de gerar para evitar duplicação
+    photoTrack.innerHTML = '';
+    photoDotsContainer.innerHTML = '';
 
-    const dot = document.createElement('div');
-    dot.className = i === 1 ? 'dot active' : 'dot';
-    dot.addEventListener('click', () => updateCarousel(i - 1));
-    dotsContainer.appendChild(dot);
-}
+    // Criação dinâmica dos elementos
+    for (let i = 1; i <= photoTotalImages; i++) {
+        const slide = document.createElement('div');
+        slide.className = 'carousel-item';
+        slide.innerHTML = `<img src="assets/procedimento${i}.jpeg" alt="Procedimento ${i}">`;
+        photoTrack.appendChild(slide);
 
-const dots = document.querySelectorAll('.dot');
+        const dot = document.createElement('div');
+        dot.className = i === 1 ? 'dot active' : 'dot';
+        dot.addEventListener('click', () => updatePhotoCarousel(i - 1));
+        photoDotsContainer.appendChild(dot);
+    }
 
-function updateCarousel(index) {
-    currentIndex = index;
-    if (currentIndex >= totalImages) currentIndex = 0;
-    if (currentIndex < 0) currentIndex = totalImages - 1;
+    const photoDots = document.querySelectorAll('.dot');
 
-    track.style.transform = `translateX(-${currentIndex * 100}%)`;
-    
-    dots.forEach((dot, idx) => {
-        dot.classList.toggle('active', idx === currentIndex);
+    function updatePhotoCarousel(index) {
+        photoCurrentIndex = index;
+        if (photoCurrentIndex >= photoTotalImages) photoCurrentIndex = 0;
+        if (photoCurrentIndex < 0) photoCurrentIndex = photoTotalImages - 1;
+
+        // O cálculo de 100% funciona porque o CSS força o item a ter 100% da largura do pai
+        photoTrack.style.transform = `translateX(-${photoCurrentIndex * 100}%)`;
+        
+        photoDots.forEach((dot, idx) => {
+            dot.classList.toggle('active', idx === photoCurrentIndex);
+        });
+    }
+
+    photoNextBtn.addEventListener('click', () => updatePhotoCarousel(photoCurrentIndex + 1));
+    photoPrevBtn.addEventListener('click', () => updatePhotoCarousel(photoCurrentIndex - 1));
+
+    // Teclas do teclado exclusivas para fotos
+    document.addEventListener('keydown', (e) => {
+        if (e.key === "ArrowLeft") updatePhotoCarousel(photoCurrentIndex - 1);
+        if (e.key === "ArrowRight") updatePhotoCarousel(photoCurrentIndex + 1);
     });
 }
-
-nextBtn.addEventListener('click', () => updateCarousel(currentIndex + 1));
-prevBtn.addEventListener('click', () => updateCarousel(currentIndex - 1));
-
-// Teclas do teclado
-document.addEventListener('keydown', (e) => {
-    if (e.key === "ArrowLeft") updateCarousel(currentIndex - 1);
-    if (e.key === "ArrowRight") updateCarousel(currentIndex + 1);
-});

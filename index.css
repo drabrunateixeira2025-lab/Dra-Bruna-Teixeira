@@ -2,20 +2,13 @@
    INDEX.CSS - Estilos Exclusivos da Página Home
    ========================================================================== */
 
-/* 1. HERO SECTION 
-   Estilo do banner principal com efeito de onda
-   -------------------------------------------------------------------------- */
+/* 1. HERO SECTION */
 .hero {
   padding: 120px 5% 180px;
   background: linear-gradient(135deg, #0a4d4a 0%, #1a6d69 100%);
   color: white;
   text-align: center;
   clip-path: ellipse(140% 100% at 50% 0%);
-}
-
-.hero-content {
-  max-width: 900px;
-  margin: 0 auto;
 }
 
 .hero h1 {
@@ -31,19 +24,17 @@
   opacity: .9;
 }
 
-/* 2. SOBRE A DRA 
-   Card flutuante com foto e descrição
-   -------------------------------------------------------------------------- */
+/* 2. SOBRE A DRA (AJUSTE DE TEXTO MÉDIO) */
 .about-dr {
   padding: 80px 5%;
-  margin-top: -60px; /* Faz o card sobrepor levemente o hero */
+  margin-top: -60px;
 }
 
 .profile-content {
   display: flex;
   flex-direction: row;
   gap: 60px;
-  align-items: center;
+  align-items: center; /* Centraliza verticalmente texto e foto */
   background: var(--white);
   padding: 50px;
   border-radius: 20px;
@@ -52,15 +43,17 @@
   box-shadow: 0 15px 35px rgba(0,0,0,.06);
 }
 
+.profile-img-container {
+  flex-shrink: 0;
+}
+
 .profile-img {
-  width: 100%;
-  max-width: 340px;
-  height: auto;
-  min-height: 400px;
+  width: 320px;
+  height: 450px;
   object-fit: cover;
   border-radius: 15px;
   border: 8px solid var(--bg-page);
-  flex-shrink: 0;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 
 .profile-info {
@@ -77,24 +70,32 @@
   width: 60px;
   border: none;
   border-top: 3px solid var(--secondary);
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
-.profile-info p {
-  font-size: 18px;
+.profile-text p {
+  font-size: 17px;
   color: #555;
-  margin-bottom: 30px;
+  margin-bottom: 18px;
+  line-height: 1.65;
+  text-align: left; /* Alinhamento à esquerda flui melhor para resumos */
+}
+
+.profile-text strong {
+  color: var(--primary);
+  font-weight: 600;
 }
 
 .btn-contato {
   display: inline-block;
+  margin-top: 15px;
   padding: 12px 30px;
   background: var(--primary);
   color: white;
   text-decoration: none;
   border-radius: 6px;
   font-weight: 500;
-  transition: var(--transition);
+  transition: 0.3s ease;
 }
 
 .btn-contato:hover {
@@ -102,9 +103,7 @@
   transform: translateY(-2px);
 }
 
-/* 3. DIFERENCIAIS (HIGHLIGHTS)
-   Grid com os 3 pilares de atendimento
-   -------------------------------------------------------------------------- */
+/* 3. DIFERENCIAIS */
 .highlights {
   padding: 80px 5%;
 }
@@ -123,77 +122,42 @@
   border-radius: 18px;
   box-shadow: 0 10px 25px rgba(0,0,0,.04);
   text-align: center;
-  transition: var(--transition);
-  border-bottom: 4px solid transparent;
+  transition: 0.3s ease;
 }
 
-.highlight-card h3 {
-  color: var(--secondary);
-  margin-bottom: 15px;
-  font-size: 20px;
-}
-
-.highlight-card p {
-  color: #666;
-  font-size: 15px;
-}
+.highlight-card h3 { color: var(--secondary); margin-bottom: 15px; }
+.highlight-card p { color: #666; font-size: 15px; }
 
 .highlight-card:hover {
   transform: translateY(-10px);
-  border-bottom: 4px solid var(--secondary);
 }
 
-/* ==========================================================================
+/* ==============================
    RESPONSIVIDADE INDEX
-   ========================================================================== */
-
-/* Tablets e iPads */
+================================ */
 @media (max-width: 968px) {
   .profile-content {
-    gap: 30px;
-    padding: 40px;
-  }
-  
-  .profile-img {
-    max-width: 300px;
-    min-height: auto;
-  }
-}
-
-/* Celulares (Mobile) */
-@media (max-width: 850px) {
-  .about-dr {
-    padding-top: 100px;
-  }
-
-  .profile-content {
-    flex-direction: column; /* Empilha foto e texto */
+    flex-direction: column;
     text-align: center;
-    padding: 30px 20px;
+    padding: 35px 25px;
+    gap: 30px;
+  }
+
+  .profile-text p {
+    text-align: center;
   }
 
   .profile-img {
-    max-width: 260px;
-    min-height: auto;
-    margin-bottom: 10px;
+    width: 260px;
+    height: 360px;
   }
 
   .separator {
-    margin: 0 auto 20px; /* Centraliza a linha no mobile */
-  }
-
-  .hero {
-    padding: 100px 5% 150px;
+    margin: 0 auto 20px;
   }
 }
 
-/* Celulares Pequenos */
 @media (max-width: 480px) {
-  .profile-info p {
-    font-size: 16px;
-  }
-  
-  .highlight-card {
-    padding: 30px 20px;
-  }
+  .hero h1 { font-size: 30px; }
+  .profile-text p { font-size: 16px; }
 }
